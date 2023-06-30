@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 <h1>Daftar Anggota</h1>
+<a href="/dashboard/anggota/tambah" class="btn btn-primary mb-4">Tambah</a>
 <table id="table" class="display table table-striped table-bordered">
     <thead>
         <td>No</td>

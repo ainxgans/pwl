@@ -3,6 +3,8 @@
 <?= $this->section('content') ?>
 <h1>Daftar Buku</h1>
 <table id="table" class="display table table-striped table-bordered">
+    <a href="/dashboard/buku/tambah" class="btn btn-primary mb-4">Tambah</a>
+
     <thead>
         <td>No</td>
         <td>Judul</td>

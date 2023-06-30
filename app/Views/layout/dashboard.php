@@ -171,7 +171,7 @@
         <h1>Header</h1>
     </header>
     <div class="container">
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar col-2" id="sidebar">
             <ul>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/dashboard/anggota">Anggota</a></li>

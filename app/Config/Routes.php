@@ -42,8 +42,8 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('/', 'Dashboard::index');
     $routes->group('buku', function ($routes) {
         $routes->get('/', 'Buku::index');
-        $routes->get('tambah', 'Buku::tambah');
-        $routes->post('tambah', 'Buku::save');
+        $routes->get('tambah', 'Buku::create');
+        $routes->post('tambah', 'Buku::store');
         $routes->get('edit/(:num)', 'Buku::edit/$1');
         $routes->post('edit/(:num)', 'Buku::update/$1');
         $routes->get('delete/(:num)', 'Buku::delete/$1');

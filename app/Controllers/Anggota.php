@@ -17,14 +17,14 @@ class Anggota extends BaseController
     }
     public function create()
     {
-        return view('dashboard/anggota/tambah');
+        return view('dashboard/anggota/create');
     }
     public function store()
     {
         $anggota = new AnggotaModel();
         $data = $this->request->getPost();
         $anggota->insert($data);
-        return redirect()->to('/anggota');
+        return redirect()->to('/dashboard/anggota');
     }
     public function edit($id)
     {

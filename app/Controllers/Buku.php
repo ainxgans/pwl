@@ -13,16 +13,15 @@ class Buku extends BaseController
         $data['buku'] = $buku->findAll();
         return view('dashboard/buku/index', $data);
     }
-    public function tambah()
+    public function create()
     {
-        return view('buku/tambah');
+        return view('dashboard/buku/create');
     }
-    public function save()
+    public function store()
     {
         $buku = new BukuModel();
         $data = $this->request->getPost();
-        if ($buku->insert($data)) {
-            return redirect()->to('/buku');
-        }
+        $buku->insert($data);
+        return redirect()->to('/dashboard/buku');
     }
 }
