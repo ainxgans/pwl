@@ -24,4 +24,24 @@ class Buku extends BaseController
         $buku->insert($data);
         return redirect()->to('/dashboard/buku');
     }
+    public function edit($id)
+    {
+        $buku = new BukuModel();
+        $data['buku'] = $buku->where('id', $id)->first();
+        return view('dashboard/buku/edit', $data);
+    }
+    public function update($id)
+    {
+        $buku = new BukuModel();
+        $data = $this->request->getPost();
+        $buku->update($id, $data);
+        return redirect()->to('/buku');
+    }
+    public function delete()
+    {
+        $buku = new BukuModel();
+        $id = $this->request->getPost('id');
+        $buku->delete($id);
+        return redirect()->to('/dashboard/buku')->with('success', 'Data berhasil dihapus');
+    }
 }

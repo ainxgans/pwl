@@ -44,6 +44,7 @@ $routes->group('dashboard', function ($routes) {
         $routes->get('/', 'Buku::index');
         $routes->get('tambah', 'Buku::create');
         $routes->post('tambah', 'Buku::store');
+        $routes->post('hapus', 'Buku::delete');
         $routes->get('edit/(:num)', 'Buku::edit/$1');
         $routes->post('edit/(:num)', 'Buku::update/$1');
         $routes->get('delete/(:num)', 'Buku::delete/$1');
@@ -52,6 +53,7 @@ $routes->group('dashboard', function ($routes) {
         $routes->get('/', 'Anggota::index');
         $routes->get('tambah', 'Anggota::create');
         $routes->post('tambah', 'Anggota::store');
+        $routes->post('hapus', 'Anggota::delete');
         $routes->get('edit/(:num)', 'Anggota::edit/$1');
         $routes->post('edit/(:num)', 'Anggota::update/$1');
         $routes->get('delete/(:num)', 'Anggota::delete/$1');

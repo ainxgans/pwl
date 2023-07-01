@@ -39,4 +39,11 @@ class Anggota extends BaseController
         $anggota->update($id, $data);
         return redirect()->to('/anggota');
     }
+    public function delete()
+    {
+        $anggota = new AnggotaModel();
+        $id = $this->request->getPost('id');
+        $anggota->delete($id);
+        return redirect()->to('/dashboard/anggota')->with('success', 'Data berhasil dihapus');
+    }
 }

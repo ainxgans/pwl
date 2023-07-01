@@ -193,6 +193,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         var sidebar = document.getElementById('sidebar');
         var content = document.getElementById('content');
@@ -205,6 +206,34 @@
             $('#select').select2();
             $('#selectbuku').select2();
         });
+
+        function hapus() {
+            event.preventDefault();
+            let form = event.target.form;
+            Swal.fire({
+                title: 'Apakah anda yakin?',
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#333',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            })
+        }
+        if (<?= session()->getFlashdata('success') ? 'true' : 'false' ?>) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: '<?= session()->getFlashdata('success') ?>',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
     </script>
 </body>
 

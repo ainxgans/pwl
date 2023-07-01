@@ -13,6 +13,7 @@
         <td>Tahun terbit</td>
         <td>Jumlah Halaman</td>
         <td>Sinopsis</td>
+        <td>Aksi</td>
     </thead>
     <tbody>
         <?php $no = 1;
@@ -25,6 +26,12 @@
                 <td><?= $b['tahun_terbit'] ?></td>
                 <td><?= $b['jumlah_halaman'] ?></td>
                 <td><?= substr_replace($b['sinopsis'], "...", 50) ?></td>
+                <td>
+                    <form action="/dashboard/buku/hapus" method="post">
+                        <input type="hidden" value="<?= $b['id'] ?>" name="id">
+                        <button type="submit" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach ?>
     </tbody>

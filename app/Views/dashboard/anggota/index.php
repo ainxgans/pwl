@@ -10,6 +10,7 @@
         <td>Alamat</td>
         <td>Email</td>
         <td>Telepon</td>
+        <td>Aksi</td>
     </thead>
     <tbody>
         <?php $no = 1;
@@ -20,6 +21,12 @@
                 <td><?= $a['alamat'] ?></td>
                 <td><?= $a['email'] ?></td>
                 <td><?= $a['telepon'] ?></td>
+                <td>
+                    <form action="/dashboard/anggota/hapus" method="post">
+                        <input type="hidden" value="<?= $a['id'] ?>" name="id">
+                        <button type="submit" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach ?>
     </tbody>
